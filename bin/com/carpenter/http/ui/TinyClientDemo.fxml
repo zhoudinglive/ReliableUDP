@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="691.0" prefWidth="972.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.carpenter.http.ui.TinyClientController">
+   <children>
+      <Sphere layoutX="335.0" layoutY="277.0" radius="0.77" />
+      <TabPane fx:id="MyTab" layoutX="8.0" layoutY="7.0" prefHeight="691.0" prefWidth="972.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab text="New Tab">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="Search" layoutX="120.0" layoutY="220.0" onKeyTyped="#getURL" prefHeight="36.0" prefWidth="733.0" />
+                        <Button fx:id="Index3" layoutX="670.0" layoutY="331.0" mnemonicParsing="false" onAction="#getIndex" prefHeight="130.0" prefWidth="183.0" style="-fx-background-color: #FF4500;" text="Index3" textFill="WHITE">
+                           <font>
+                              <Font size="26.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="Index1" layoutX="120.0" layoutY="331.0" mnemonicParsing="false" onAction="#getIndex" prefHeight="130.0" prefWidth="183.0" style="-fx-background-color: #8470FF;" text="Index1" textFill="#f8f5f5">
+                           <font>
+                              <Font size="26.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="Index2" layoutX="395.0" layoutY="331.0" mnemonicParsing="false" onAction="#getIndex" prefHeight="130.0" prefWidth="183.0" style="-fx-background-color: #00FF7F;" text="Index2">
+                           <font>
+                              <Font size="26.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="Web" text="Web">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <WebView fx:id="HTML" layoutY="6.0" prefHeight="662.0" prefWidth="972.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="Details" text="Details">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextArea fx:id="request" layoutX="14.0" layoutY="118.0" prefHeight="422.0" prefWidth="426.0" />
+                        <TextArea fx:id="response" layoutX="532.0" layoutY="120.0" prefHeight="422.0" prefWidth="426.0" />
+                        <Label alignment="CENTER" layoutX="100.0" layoutY="52.0" prefHeight="41.0" prefWidth="254.0" text="Request HTTP" textAlignment="CENTER">
+                           <font>
+                              <Font size="29.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="618.0" layoutY="52.0" prefHeight="41.0" prefWidth="254.0" text="Response HTTP" textAlignment="CENTER">
+                           <font>
+                              <Font size="29.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="ReliableUDP.jnlp">
+  <information>
+    <title>ReliableUDP</title>
+    <vendor>ReliableUDP</vendor>
+    <description>ReliableUDP</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="ReliableUDP.jar" size="28118" download="eager" />
+    <jar href="libs\gson-2.8.0.jar" size="231952" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="0" height="0" main-class="com.carpenter.http.ui.TinyClient"  name="ReliableUDP" />
+  <update check="background"/>
+</jnlp>

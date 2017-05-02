@@ -54,17 +54,12 @@ public class RDTBuffer {
 
 	public void putNext(RDTSegment seg) {
 		try {
-			//System.out.println("Waiting... = " + seg.seqNum);
 			semEmpty.acquire();
 			semMutex.acquire();
 			System.out.println("at i = " + (next % buffSize) + " save " + seg.seqNum);
 			synchronized (buffSeg) {
 				buffSeg[next % buffSize] = seg;
 			}
-//			out.write(buffSeg[next % buffSize].data, 0, buffSeg[next % buffSize].length);
-//			if(buffSeg[next % buffSize].isValid()){
-//				System.out.println("!!!!!!!!!!!!!!!!!!!!");
-//			}
 			next++;
 			semMutex.release();
 			semFull.release();

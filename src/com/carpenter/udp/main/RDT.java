@@ -186,9 +186,9 @@ class ReceiverThread extends Thread {
 						if (seg.seqNum < ((rcvBuffer.rcv_base + RDT.MaxBuffSize) % RDT.MaxIndexSize)
 								|| seg.seqNum >= rcvBuffer.rcv_base) {
 							rcvBuffer.putBySeqNum(seg);
-//							System.out.println("++++++++++++++++++++++++++++++++++++++++++");
+//							System.out.println("+++++++++++++++++++++++++++++++++");
 //							System.out.println("receive seqNum = " + seg.seqNum);
-//							System.out.println("++++++++++++++++++++++++++++++++++++++++++");
+//							System.out.println("+++++++++++++++++++++++++++++++++");
 							RDTSegment removeSeg;
 							while((removeSeg = rcvBuffer.removeNotNull()) != null){
 								rcvSeg.add(removeSeg);
@@ -200,9 +200,9 @@ class ReceiverThread extends Thread {
 					} else {
 						if (seg.seqNum >= rcvBuffer.rcv_base && seg.seqNum < (rcvBuffer.rcv_base + RDT.MaxBuffSize)) {
 							rcvBuffer.putBySeqNum(seg);
-//							System.out.println("++++++++++++++++++++++++++++++++++++++++++");
+//							System.out.println("+++++++++++++++++++++++++++++++++");
 //							System.out.println("receive seqNum = " + seg.seqNum);
-//							System.out.println("++++++++++++++++++++++++++++++++++++++++++");
+//							System.out.println("+++++++++++++++++++++++++++++++++");
 							RDTSegment removeSeg;
 							while((removeSeg = rcvBuffer.removeNotNull()) != null){
 								rcvSeg.add(removeSeg);

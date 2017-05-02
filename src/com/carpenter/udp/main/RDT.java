@@ -110,30 +110,6 @@ public class RDT {
 			return 0;
 		}
 	}
-
-	public static void main(String[] args) throws Exception {
-
-		RDT rdt = new RDT(InetAddress.getLocalHost(), 8001, 8000);
-		rdt.setLossRate(0.6);
-		byte[] data = new byte[RDT.MSS];
-		byte[] test_data = new byte[RDT.MSS];
-		for (int i = 0; i < RDT.MSS; ++i) {
-			test_data[i] = (byte) i;
-		}
-		int length = 0;
-		FileInputStream in = new FileInputStream(new File("G:\\原始文件\\计算机科学与技术14-1班团日活动资料\\团建效果展示 [自动保存的].pptx"));
-		while ((length = in.read(data)) != -1) {
-			rdt.send(data, length);
-		}
-		if(length==-1){
-			System.out.println("发送包数：" + RDT.sndSegNum);
-			System.out.println("接受包数：" + (RDT.sndSegNum + 40));
-			System.out.println("重传包数：" + RDT.retranSegNum);
-			System.out.println("数据包丢包数：" + RDT.dataLostSegNum);
-			System.out.println("success");
-		}
-
-	}
 }
 
 class ReceiverThread extends Thread {

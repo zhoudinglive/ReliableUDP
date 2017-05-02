@@ -42,8 +42,7 @@ public class RDT {
 	public static Random random = new Random();
 	public static Timer timer = new Timer();
 	public static boolean done = false;
-	public static int sndSegNum = 0, rcvSegNum = 0, ackLostSegNum = 0, retranSegNum = 0,
-			dataLostSegNum = 0;
+	public static int sndSegNum = 0, rcvSegNum = 0, ackLostSegNum = 0, retranSegNum = 0, dataLostSegNum = 0;
 
 	private DatagramSocket socket;
 	private InetAddress dstIp;

@@ -37,14 +37,7 @@ public class JustTest {
 		while (true) {
 			int size = server.receive(data, RDT.MSS);
 			if (size != 0) {
-				// for(int i =0;i<size;++i){
-				// System.out.print(data[i]+" ");
-				//
-				// }
-				// System.out.println();
 				out.write(data, 0, size);
-				// out.flush();
-				// flag = false;
 			}
 		}
 

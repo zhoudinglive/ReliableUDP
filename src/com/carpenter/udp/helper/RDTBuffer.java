@@ -38,8 +38,6 @@ public class RDTBuffer {
 	public int rcv_base;
 	private int next;
 	private Semaphore semEmpty;
-	private Semaphore semFull;
-	private Semaphore semMutex;
 
 	public RDTBuffer(int buffSize) throws FileNotFoundException {
 		this.buffSize = buffSize;
@@ -48,21 +46,16 @@ public class RDTBuffer {
 			this.buffSeg[i] = null;
 		this.base = next = snd_base = rcv_base = 0;
 		this.semEmpty = new Semaphore(buffSize, true);
-		this.semFull = new Semaphore(0, true);
-		this.semMutex = new Semaphore(1, true);
 	}
 
 	public void putNext(RDTSegment seg) {
 		try {
 			semEmpty.acquire();
-			semMutex.acquire();
 			System.out.println("at i = " + (next % buffSize) + " save " + seg.seqNum);
 			synchronized (buffSeg) {
 				buffSeg[next % buffSize] = seg;
 			}
 			next++;
-			semMutex.release();
-			semFull.release();
 		} catch (Exception e) {
 			System.out.println("Buffer put exception:" + e);
 			e.printStackTrace();

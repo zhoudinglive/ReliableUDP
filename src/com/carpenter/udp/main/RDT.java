@@ -151,9 +151,6 @@ class ReceiverThread extends Thread {
 					if (ack == sndBuffer.snd_base) {
 						sndBuffer.removeACKReceived();
 					}
-					
-					
-
 				}
 				System.out.println("arrival seqNum = " + seg.seqNum + " rcv_base= " + rcvBuffer.rcv_base);
 				if (seg.containsData()) {
